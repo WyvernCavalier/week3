@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication1
+namespace ConsoleApplication2
 {
     class Program
     {
@@ -21,8 +21,8 @@ namespace ConsoleApplication1
                 {
                     for (Int32 i = number; i > 0; i--)
                     {
-                        output += i;
-                       
+                        output =sumupto(number);
+
                     }
                     Console.WriteLine("the result number is " + output);
                 }
@@ -34,7 +34,17 @@ namespace ConsoleApplication1
                 output = 0;
             }
         }
-
+        static int sumupto(int number)
+        {
+            int result;
+            if (number > 0)
+            {
+                
+                result=sumupto(number-1)+number;
+            }
+            else result = 0;
+            return result;
+                }
         static void Input_Number()
         {
             Console.WriteLine("Please input your number, or'quit' to quit >");
